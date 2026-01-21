@@ -6,6 +6,7 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <script src="jquery-4.0.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -319,14 +320,17 @@
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control" id="name" placeholder="Enter name">
+                <div class="error text-danger"></div>
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email">
+                <input type="text" class="form-control" id="email" placeholder="Enter email">
+                <div class="error text-danger"></div>
             </div>
             <div class="mb-3">
                 <label for="textarea" class="form-label">Message</label>
                 <textarea class="form-control" id="textarea" rows="4" placeholder="Enter your message"></textarea>
+                <div class="error text-danger"></div>
             </div>
             <div class="text-center">
                 <button type="submit" class="btn btn-primary w-100" style="max-width: 455px;">Submit</button>
@@ -342,5 +346,26 @@
         </div>
         </div>
     </footer>
+    <div class="modal fade" id="successModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Success</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body text-center">
+                <p>Your message has been sent successfully!</p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">OK</button>
+            </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
 </body>
 </html>

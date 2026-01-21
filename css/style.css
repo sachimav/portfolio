@@ -111,3 +111,29 @@ html {
         width: 100%;
     }
 }
+
+@media (max-width: 576px) {
+    .card-edu {
+        width: 80%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    .card-h5{
+        font-size: 1rem;
+    }
+    .card-p{
+        font-size: 0.875rem;
+    }
+}
+.cer-btn{
+    width: 150px;
+}
+
+form{
+    padding: 20px;
+    border: 1px solid rgb(201, 200, 200);
+    border-radius: 6px;
+}
+.form-btn{
+    width: 455px;
+}

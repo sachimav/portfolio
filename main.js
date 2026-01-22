@@ -38,3 +38,17 @@ $(document).ready(function(){
 
     });
 });
+
+
+const card = document.querySelectorAll(".ani");
+
+const observer = new IntersectionObserver(entries =>{
+    entries.forEach(entry =>{
+        entry.target.classList.toggle("show",entry.isIntersecting);
+    });
+    console.log(entries);
+});
+
+card.forEach(card => {
+    observer.observe(card);
+})

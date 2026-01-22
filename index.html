@@ -320,21 +320,22 @@
             <input type="hidden" name="access_key" value="b2f54b90-5800-4ac3-8860-daa29fb2d749">
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
-                <input name="name" type="text" class="form-control" id="name" placeholder="Enter name">
+                <input name="name" type="text" class="form-control" id="name" placeholder="Enter name" required>
                 <div class="error text-danger"></div>
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>
-                <input name="email" type="text" class="form-control" id="email" placeholder="Enter email">
+                <input name="email" type="text" class="form-control" id="email" placeholder="Enter email" required>
                 <div class="error text-danger"></div>
             </div>
             <div class="mb-3">
                 <label for="textarea" class="form-label">Message</label>
-                <textarea name="message" class="form-control" id="textarea" rows="4" placeholder="Enter your message"></textarea>
+                <textarea name="message" class="form-control" id="textarea" rows="4" placeholder="Enter your message" required></textarea>
                 <div class="error text-danger"></div>
             </div>
+            <input type="hidden" name="redirect" value="https://web3forms.com/success">
             <div class="text-center">
-                <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                
                 <button type="submit" class="btn btn-primary w-100" style="max-width: 455px;">Submit</button>
             </div>
         </form>

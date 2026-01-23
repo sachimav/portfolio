@@ -2,7 +2,7 @@ $(document).ready(function(){
     
     $("form").submit(function(e){
         
-        e.preventDefault();
+       
         $(".error").remove(); 
 
         let name = $("#name").val().trim();

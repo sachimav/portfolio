@@ -29,11 +29,8 @@ $(document).ready(function(){
             valid = false;
         }
 
-        if(valid){
-            let modal = new bootstrap.Modal(document.getElementById('successModal'));
-            modal.show();
-
-            $("form")[0].reset();
+        if(!valid){
+            e.preventDefault();
         }
 
     });

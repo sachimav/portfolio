@@ -1,5 +1,32 @@
 $(document).ready(function(){
-    
+    const STORAGE_KEY = "portfolio-theme";
+    const $html = $("html");
+    const $toggle = $("#themeToggle");
+    const $iconMoon = $toggle.find(".theme-icon-moon");
+    const $iconSun = $toggle.find(".theme-icon-sun");
+
+    function applyTheme(theme) {
+        $html.attr("data-bs-theme", theme);
+        localStorage.setItem(STORAGE_KEY, theme);
+
+        const isDark = theme === "dark";
+        $iconMoon.toggleClass("d-none", isDark);
+        $iconSun.toggleClass("d-none", !isDark);
+        $toggle.attr("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+        $toggle.attr("title", isDark ? "Light mode" : "Dark mode");
+    }
+
+    let savedTheme = localStorage.getItem(STORAGE_KEY);
+    if (savedTheme !== "dark" && savedTheme !== "light") {
+        savedTheme = "light";
+    }
+    applyTheme(savedTheme);
+
+    $toggle.on("click", function () {
+        const nextTheme = $html.attr("data-bs-theme") === "dark" ? "light" : "dark";
+        applyTheme(nextTheme);
+    });
+
     $("form").submit(function(e){
         
        
@@ -43,7 +70,6 @@ const observer = new IntersectionObserver(entries =>{
     entries.forEach(entry =>{
         entry.target.classList.toggle("show",entry.isIntersecting);
     });
-    console.log(entries);
 });
 
 card.forEach(card => {
